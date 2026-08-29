@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ma Boutique — Paiement sécurisé</title>
+  <meta name="description" content="Boutique en ligne avec paiement sécurisé par carte et mobile money.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="container nav">
+    <a class="logo" href="#">MA BOUTIQUE</a>
+    <button id="cartBtn" class="cart-btn">Panier (<span id="cartCount">0</span>)</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">BOUTIQUE EN LIGNE</p>
+      <h1>Des produits simples.<br>Un paiement sécurisé.</h1>
+      <p>Choisissez vos articles, ajoutez-les au panier et payez en ligne via CinetPay.</p>
+      <a href="#products" class="primary">Voir les produits</a>
+    </div>
+  </section>
+
+  <section id="products" class="container section">
+    <div class="section-head">
+      <div><p class="eyebrow">CATALOGUE</p><h2>Nos produits</h2></div>
+    </div>
+    <div id="productGrid" class="grid"></div>
+  </section>
+</main>
+
+<div id="overlay" class="overlay hidden"></div>
+<aside id="cart" class="cart-panel">
+  <div class="cart-head"><h2>Votre panier</h2><button id="closeCart" class="icon-btn">×</button></div>
+  <div id="cartItems" class="cart-items"></div>
+  <div class="cart-footer">
+    <div class="total"><span>Total</span><strong id="cartTotal">0 FCFA</strong></div>
+    <button id="checkoutBtn" class="primary full">Passer la commande</button>
+    <p class="small">Le paiement est traité par CinetPay. Les données de carte ne sont pas enregistrées sur ce site.</p>
+  </div>
+</aside>
+
+<div id="checkoutModal" class="modal hidden">
+  <div class="modal-card">
+    <button id="closeModal" class="icon-btn modal-close">×</button>
+    <p class="eyebrow">COMMANDE</p>
+    <h2>Vos informations</h2>
+    <form id="checkoutForm">
+      <label>Nom complet<input id="customerName" required></label>
+      <label>Email<input id="customerEmail" type="email" required></label>
+      <label>Téléphone<input id="customerPhone" required></label>
+      <label>Pays
+        <select id="customerCountry">
+          <option value="CM">Cameroun</option>
+          <option value="FR">France</option>
+          <option value="BE">Belgique</option>
+          <option value="DE">Allemagne</option>
+          <option value="ES">Espagne</option>
+          <option value="IT">Italie</option>
+          <option value="NL">Pays-Bas</option>
+          <option value="PT">Portugal</option>
+          <option value="OTHER">Autre</option>
+        </select>
+      </label>
+      <button class="primary full" type="submit">Continuer vers le paiement</button>
+    </form>
+    <p id="paymentMessage" class="notice hidden"></p>
+  </div>
+</div>
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
